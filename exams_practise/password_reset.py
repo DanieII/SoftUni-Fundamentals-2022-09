@@ -24,19 +24,19 @@ while True:
     if command == "Done":
         break
 
-    splitted = command.split()
-    action = splitted[0]
+    split = command.split()
+    action = split[0]
     if action == "TakeOdd":
         string = take_odd(string)
         print(string)
     elif action == "Cut":
-        index = int(splitted[1])
-        length = int(splitted[2])
+        index = int(split[1])
+        length = int(split[2])
         string = cut(string, index, length)
         print(string)
     elif action == "Substitute":
-        substring = splitted[1]
-        substitute = splitted[2]
+        substring = split[1]
+        substitute = split[2]
         function = substitute_func(string, substring, substitute)
         if function == "Nothing to replace!":
             print(function)

@@ -23,22 +23,22 @@ while True:
     if command == "Travel":
         break
 
-    splitted = command.split(":")
-    action = splitted[0]
+    split = command.split(":")
+    action = split[0]
 
     if action == "Add Stop":
-        index = int(splitted[1])
-        string = splitted[2]
+        index = int(split[1])
+        string = split[2]
         all_stops = add(all_stops, index, string)
 
     elif action == "Remove Stop":
-        start = int(splitted[1])
-        end = int(splitted[2])
+        start = int(split[1])
+        end = int(split[2])
         all_stops = remove(all_stops, start, end)
 
     elif action == "Switch":
-        old = splitted[1]
-        new = splitted[2]
+        old = split[1]
+        new = split[2]
         all_stops = switch(all_stops, old, new)
 
     print(all_stops)

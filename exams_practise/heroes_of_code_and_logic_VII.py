@@ -60,24 +60,24 @@ while True:
     if command == "End":
         break
 
-    splitted = command.split(" - ")
-    action = splitted[0]
-    hero_name = splitted[1]
+    split = command.split(" - ")
+    action = split[0]
+    hero_name = split[1]
     hp = int(dict_with_heroes[hero_name][0])
     mp = int(dict_with_heroes[hero_name][1])
     if action == "CastSpell":
-        mana_needed = int(splitted[2])
-        spell_name = splitted[3]
+        mana_needed = int(split[2])
+        spell_name = split[3]
         print(cast_spell(hero_name, mana_needed, spell_name))
     elif action == "TakeDamage":
-        damage = int(splitted[2])
-        attacker = splitted[3]
+        damage = int(split[2])
+        attacker = split[3]
         print(take_damage(hero_name, damage, attacker))
     elif action == "Recharge":
-        amount = int(splitted[2])
+        amount = int(split[2])
         print(recharge_func(hero_name, amount))
     elif action == "Heal":
-        amount_to_heal = int(splitted[2])
+        amount_to_heal = int(split[2])
         print(heal_func(hero_name, amount_to_heal))
 
 for k, v in dict_with_heroes.items():
